@@ -1,4 +1,11 @@
-# Pii Manager
+# multilingual PII tool
+
+Extension of BigScience PII-manager data-tool (https://github.com/bigscience-workshop/data_tooling/tree/master/pii-manager).
+Contains new phone number recognition tasks for Spanish, French, German and Italian.
+
+***
+
+bigscience-workshop/data-tooling/pii-manager
 
 This repository builds a Python package that performs PII processing for text
 data i.e. replacement/tagging/extraction of PII (Personally Identifiable
