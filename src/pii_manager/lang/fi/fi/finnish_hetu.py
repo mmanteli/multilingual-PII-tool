@@ -67,4 +67,4 @@ def hetu(doc: str) -> Iterable[str]:
             yield candidate
 
 
-PII_TASKS = [(PiiEnum.GOV_ID, social_insurance_number)]
+PII_TASKS = [(PiiEnum.GOV_ID, hetu)]

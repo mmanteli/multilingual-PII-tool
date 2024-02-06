@@ -15,11 +15,11 @@ PII_TASKS = [
         "type": "regex",
         "task": PATTERN_ES_PHONE,
         "name": "Spanish phone number",
-        "doc": "detect phone numbers that use Spanish format. Uses language context",
-        "context": {
-            "value": ["teléfono", "telefono", "telf", "teléf.", "tel.", "tlf", "tfno", "numero","llama"],
-            "width": [16, 0],
-            "type": "word",
-        },
+        "doc": "detect phone numbers that use Spanish format. ",
+        #"context": {
+        #    "value": ["teléfono", "telefono", "telf", "teléf.", "tel.", "tlf", "tfno", "numero","llama"],
+        #    "width": [16, 0],
+        #    "type": "word",
+        #},
     }
 ]

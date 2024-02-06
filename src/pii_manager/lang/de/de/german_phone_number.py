@@ -15,11 +15,11 @@ PII_TASKS = [
         "type": "regex",
         "task": PATTERN_DE_PHONE,
         "name": "German phone number",
-        "doc": "detect phone numbers that use German format. Uses language context",
-        "context": {
-            "value": ["Tel", "Telefon", "Telefonnummer", "Rufen", "Tel.Nr."],
-            "width": [22, 0],
-            "type": "word",
-        },
+        "doc": "detect phone numbers that use German format. ",
+        #"context": {
+        #    "value": ["Tel", "Telefon", "Telefonnummer", "Rufen", "Tel.Nr."],
+        #    "width": [22, 0],
+        #    "type": "word",
+        #},
     }
 ]

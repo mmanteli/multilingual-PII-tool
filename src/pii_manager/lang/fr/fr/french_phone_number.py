@@ -15,11 +15,11 @@ PII_TASKS = [
         "type": "regex",
         "task": PATTERN_FR_PHONE,
         "name": "French phone number",
-        "doc": "detect phone numbers that use French format. Uses language context",
-        "context": {
-            "value": ["appeler","numéro", "numero","appelez","téléphone","tél", "tel"],
-            "width": [16, 0],
-            "type": "word",
-        },
+        "doc": "detect phone numbers that use French format. ",
+        #"context": {
+        #    "value": ["appeler","numéro", "numero","appelez","téléphone","tél", "tel"],
+        #    "width": [16, 0],
+        #    "type": "word",
+        #},
     }
 ]

@@ -15,8 +15,25 @@ from ..helper.base import BasePiiTask, CallablePiiTask, RegexPiiTask
 from ..helper.exception import InvArgException
 from ..lang import LANG_ANY, COUNTRY_ANY
 
+#    CREDIT_CARD
+#    BITCOIN_ADDRESS
+#    IP_ADDRESS
+#    EMAIL_ADDRESS
+#    AGE
+#    BIRTH_DATE
+#    DEATH_DATE
+#    NORP
+#    DISEASE
+#    BANK_ACCOUNT
+#    GOV_ID
+#    PHONE_NUMBER
+#    LICENSE_PLATE
+#    STREET_ADDRESS
 
-DEFAULT_TEMPLATES = {"replace": "<{name}>", "tag": "<{name}:{value}>"}
+
+conv = {"EMAIL_ADDRESS": "example@email.com", "PHONE_NUMBER": "+0 11112222", "IP_ADDRESS": "0.0.0.0"}
+
+DEFAULT_TEMPLATES = {"replace": "<{name}>", "tag": "<{name}:{value}>","convert": "{name}"}
 
 
 # --------------------------------------------------------------------------
@@ -215,7 +232,7 @@ class PiiManager:
                 output += [
                     doc[pos : pii.pos],
                     self.template.format(
-                        name=pii.elem.name, value=pii.value, country=pii.country
+                        name=[conv[pii.elem.name] if self.mode=="convert" and pii.elem.name in conv.keys() else pii.elem.name][0], value=pii.value, country=pii.country
                     ),
                 ]
                 self.stats[pii.elem.name] += 1

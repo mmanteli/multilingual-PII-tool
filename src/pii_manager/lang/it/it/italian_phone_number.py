@@ -15,11 +15,11 @@ PII_TASKS = [
         "type": "regex",
         "task": PATTERN_IT_PHONE,
         "name": "Italian phone number",
-        "doc": "detect phone numbers that use Italian format. Uses language context",
-        "context": {
-            "value": ["numero", "chiamare", "chiamata", "chiama", "telefono", "tel", "Tel"],
-            "width": [16, 0],
-            "type": "word",
-        },
+        "doc": "detect phone numbers that use Italian format.",
+        #"context": {
+        #    "value": ["numero", "chiamare", "chiamata", "chiama", "telefono", "tel", "Tel"],
+        #    "width": [16, 0],
+        #    "type": "word",
+        #},
     }
 ]
