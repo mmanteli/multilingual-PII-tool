@@ -5,7 +5,8 @@ Detection of phone numbers written with local phone number format (with our with
 
 from pii_manager import PiiEnum
 
-PATTERN_FI_PHONE = r'(((\+358[ ]\d{2}[ ])|(0\d{1,2}[ ]))((\d{7,8})|(\d{2,4}[ ]\d{3,4})))|(0\d{3}[ ](\d{3,4}[ ]\d{3,4}|\d{6,8}))'
+PATTERN_FI_PHONE = r'(((\+358[ ]?)|(0))((\d{2,3}[ ]\d{3}[ ]\d{3,4})|(\d{2}[ ]\d{6,10})|(\d{8,10})))|(0\d[ ]((\d{7,9})|(\d{3}[ ]\d{4})))'
+#PATTERN_FI_PHONE = r'(((\+358[ ]\d{2}[ ])|(0\d{1,2}[ ]))(((\d{7,8})|(\d{2,4}[ ]\d{3,4})))|(0\d{3}[ ](\d{3,4}[ ]\d{3,4}|\d{6,8})))'
 
 
 
