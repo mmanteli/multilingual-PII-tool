@@ -1,8 +1,37 @@
 # multilingual PII tool
 
 Extension of BigScience PII-manager data-tool (https://github.com/bigscience-workshop/data_tooling/tree/master/pii-manager).
-Contains new phone number recognition tasks for Spanish, French, German and Italian.
+Contains new phone number recognition tasks for over 20 languages.
+Test done using a different scripts than the unit testing feature, unit tests to be implemented.
 
+See *Building* below for installation.
+
+New mode also implemented: ``convert``, which converts the detected PII to a placeholder, e.g. ``example@email.com``. 
+``convert`` implemented for ``PHONE_NUMBER``, ``EMAIL_ADDRESS``, and ``IP_ADDRESS``. See ``src/api/manager.py`` row 36->
+
+Example usage:
+
+```
+from pii_manager import PiiEnum
+from pii_manager.api import PiiManager
+from pii_manager.lang import COUNTRY_ANY #, LANG_ANY
+
+lang = "en" # or any other implemented one
+country = COUNTRY_ANY  # this uses all rules for English: US, UK, CA, AU, IN
+tasklist = (PiiEnum.IP_ADDRESS, PiiEnum.EMAIL_ADDRESS, PiiEnum.PHONE_NUMBER)   # Define here which tasks are to be used
+
+# Define the detector:
+proc = PiiManager(lang, country, tasks=tasklist, mode="convert")  # mode can be "tag", "replace" (default) or "convert"
+# or debug (all_tasks=True needed for this)
+#proc = PiiManager(lang, country, all_tasks=True, debug=True)
+
+# get info of tasks, if you so desire:
+print(proc.task_info())
+
+text = "..."
+redacted = proc(text)
+print(redacted)
+```
 ***
 
 bigscience-workshop/data-tooling/pii-manager
@@ -23,7 +52,7 @@ validate identifiers.
 
 The package can be used:
  * As an API, in two flavors: function-based API and object-based API
- * As a command-line tool
+ * As a command-line tool **NOTE**: Command-line tool has no "convert" mode implemented.
 
 For details, see the [usage document].
 

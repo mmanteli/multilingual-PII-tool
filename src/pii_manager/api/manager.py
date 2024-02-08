@@ -15,6 +15,8 @@ from ..helper.base import BasePiiTask, CallablePiiTask, RegexPiiTask
 from ..helper.exception import InvArgException
 from ..lang import LANG_ANY, COUNTRY_ANY
 
+
+# all possible tasks
 #    CREDIT_CARD
 #    BITCOIN_ADDRESS
 #    IP_ADDRESS
@@ -31,8 +33,11 @@ from ..lang import LANG_ANY, COUNTRY_ANY
 #    STREET_ADDRESS
 
 
-conv = {"EMAIL_ADDRESS": "example@email.com", "PHONE_NUMBER": "+0 11112222", "IP_ADDRESS": "0.0.0.0"}
+# Modify this to change the "convert" scheme:
+conv = {"EMAIL_ADDRESS": "example@email.com", "PHONE_NUMBER": "XXX XXXXXXX", "IP_ADDRESS": "0.0.0.0"}
 
+
+# Here, convert added (see above)
 DEFAULT_TEMPLATES = {"replace": "<{name}>", "tag": "<{name}:{value}>","convert": "{name}"}
 
 
