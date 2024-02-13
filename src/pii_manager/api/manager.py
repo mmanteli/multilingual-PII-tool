@@ -34,7 +34,7 @@ from ..lang import LANG_ANY, COUNTRY_ANY
 
 
 # Modify this to change the "convert" scheme:
-conv = {"EMAIL_ADDRESS": "example@email.com", "PHONE_NUMBER": "XXX XXXXXXX", "IP_ADDRESS": "0.0.0.0"}
+conv = {"EMAIL_ADDRESS": "example@email.com", "PHONE_NUMBER": "+0 0000000", "IP_ADDRESS": "0.0.0.0"}
 
 
 # Here, convert added (see above)
