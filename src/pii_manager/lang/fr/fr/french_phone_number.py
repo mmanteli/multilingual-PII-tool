@@ -5,7 +5,9 @@ Detection of phone numbers written with local notation (with or without country 
 
 from pii_manager import PiiEnum
 
-PATTERN_FR_PHONE = r'(\+33[ ]\d([ ]\d{2}){4})|(0\d(([ ]\d{2}){4}))'
+PATTERN_FR_PHONE = r'((\+33)|(\(\+33\))|(0))[ ]?((0?\d([ .]\d{2}){4}))'
+# updated to contain periods and brackets around country code
+#PATTERN_FR_PHONE = r'(\+33[ ]\d([ ]\d{2}){4})|(0\d(([ ]\d{2}){4}))'
 
 
 
