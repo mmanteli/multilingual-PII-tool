@@ -5,7 +5,9 @@ Detection of phone numbers written with local phone number format (with our with
 
 from pii_manager import PiiEnum
 
-PATTERN_DE_PHONE = r'((\+49[ ])|(0049[ ])|((0[ ]?))|(\+49[ ]\(0\)))(\d{2,4}[ ])(\d{6,7})'
+PATTERN_DE_PHONE = r'((\+49[ ]\(0\)[ ]?\d{2,4})|(\+49[ ]?\d{2,4})|(0049[ ]?\d{2,4})|((0[ ]?\d{3,4})))(([ ]-[ ])|([ -]))((\d{2,3}[ -]\d{2,3}[ -]\d{2,3})|(\d{2,5}[ -]\d{3,5})|(\d{4,7}))'
+# added [ ]-[ ] as one of the separators and a different way of grouping the digits
+#PATTERN_DE_PHONE = r'((\+49[ ])|(0049[ ])|((0[ ]?))|(\+49[ ]\(0\)[ ]?))(\d{2,4}[ ])(\d{4,7})'
 
 
 
