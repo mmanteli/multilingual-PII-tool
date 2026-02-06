@@ -46,7 +46,7 @@ of the PII elements are language- and/or -country dependent.
 ## Requirements
 
 The package needs at least Python 3.8, and uses the [python-stdnum] package to
-validate identifiers.
+validate some identifiers.
 
 ## Usage
 

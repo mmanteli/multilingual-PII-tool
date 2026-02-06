@@ -6,7 +6,7 @@ prefix and country code)
 
 from pii_manager import PiiEnum
 
-PATTERN_INT_PHONE = r"""
+PATTERN_INT_PHONE = r"""\b
     (?:\+ | 00)
     (?: 9[976]\d | 8[987530]\d | 6[987]\d | 5[90]\d | 42\d |
         3[875]\d | 2[98654321]\d | 9[8543210] | 8[6421] |
@@ -14,6 +14,7 @@ PATTERN_INT_PHONE = r"""
         2[70] | 7 | 1)
     [-\x20\.]?
     (?: \d{2,3} [-\x20]? ){3,4}
+    \b
 """
 
 PII_TASKS = [

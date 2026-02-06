@@ -24,3 +24,4 @@ class PiiEnum(str, Enum):
     PHONE_NUMBER = auto()
     LICENSE_PLATE = auto()
     STREET_ADDRESS = auto()
+    DRIVER_LICENSE = auto()

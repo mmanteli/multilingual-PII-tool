@@ -5,7 +5,7 @@ Detection of phone numbers written with local notation (with or without country 
 
 from pii_manager import PiiEnum
 
-PATTERN_HR_PHONE = r'((\+385[ ])|(0)|(0[ ]))\d{1,2}[ ]\d{3,4}[ ]\d{3,4}'
+PATTERN_HR_PHONE = r'\b((\+385[ ])|(0)|(0[ ]))\d{1,2}[ ]\d{3,4}[ ]\d{3,4}\b'
 
 
 

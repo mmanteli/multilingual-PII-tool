@@ -5,7 +5,7 @@ Detection of phone numbers written with local phone number format (with our with
 
 from pii_manager import PiiEnum
 
-PATTERN_AT_PHONE = r'((\+43 )|(0043 )|(0))\d{1,3} \d{5,8}'
+PATTERN_AT_PHONE = r'\b(((\+43 )|(0043 )|(0))\d{1,3} \d{5,8})\b'
 
 
 

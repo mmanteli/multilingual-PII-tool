@@ -1,40 +1,41 @@
 """
-Spanish bank account numbers (CCC - código cuenta cliente)
-
-Note: **NOT** IBAN numbers, those are country (& language) independent
+Spanish frequent bank account numbers
 """
 
 import re
 
 from typing import Iterable
 
-from stdnum.es import ccc
+from pii_manager import PiiEnum, PiiEntity
+from pii_manager.helper import BasePiiTask
 
-from pii_manager import PiiEnum
-
-# ----------------------------------------------------------------------------
-
-# regex for a Código Cuenta Cliente, with optional spaces separating the pieces
-_CCC_PATTERN = r"\d{4}\s?\d{4}\s?\d{2}\s?\d{10}"
-
-# compiled regex
-_REGEX_CCC = None
+# regex for Spanish bank account numbers
+_BA_PATTERN = r"\bES[0-9]{2}[0-9]{20}\b"
 
 
-def spanish_bank_ccc(text: str) -> Iterable[str]:
+class SpanishBankAccount(BasePiiTask):
     """
-    Spanish Bank Accounts (código cuenta cliente, 10-digit code, pre-IBAN), recognize & validate
+    Spanish frequent bank account numbers recognize
     """
-    # Compile regex if needed
-    global _REGEX_CCC
-    if _REGEX_CCC is None:
-        _REGEX_CCC = re.compile(_CCC_PATTERN, flags=re.X)
-    # Find all CCCs
-    for item in _REGEX_CCC.findall(text):
-        if ccc.is_valid(item):
-            yield item
+
+    pii_name = "Spanish Bank Account"
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # Compile the regex
+        self.ba_pattern = re.compile(_BA_PATTERN, flags=re.X)
 
 
-# ---------------------------------------------------------------------
+    def find(self, doc: str) -> Iterable[PiiEntity]:
+        # Bank Account
+        for item in self.ba_pattern.finditer(doc):
+            item_value = item.group()
+            yield PiiEntity(
+                PiiEnum.BANK_ACCOUNT,
+                item.start(),
+                item_value,
+                country=self.country,
+                name="Spanish Bank Account",
+            )
 
-PII_TASKS = [(PiiEnum.BANK_ACCOUNT, spanish_bank_ccc)]
+# Task descriptor
+PII_TASKS = [(PiiEnum.BANK_ACCOUNT, SpanishBankAccount)]

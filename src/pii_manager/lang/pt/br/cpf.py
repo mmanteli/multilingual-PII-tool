@@ -14,7 +14,7 @@ from typing import Iterable
 from pii_manager import PiiEnum
 
 
-_CPF_REGEX = re.compile(r"\d{3} \. \d{3} \. \d{3} - \d{2}", flags=re.X)
+_CPF_REGEX = re.compile(r"\b\d{3}\.\d{3}\.\d{3}-\d{2}\b", flags=re.X)
 
 
 def cadastro_pessoa_fisica(doc: str) -> Iterable[str]:

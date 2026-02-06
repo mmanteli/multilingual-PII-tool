@@ -14,8 +14,8 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for DNI & NIE
-_DNI_PATTERN = r"\d{6,8} -? [A-KJ-NP-TV-Z]"
-_NIE_PATTERN = r"[X-Z] \d{7} -? [A-KJ-NP-TV-Z]"
+_DNI_PATTERN = r"\d{6,8}[- ]?[A-KJ-NP-TV-Z]"
+_NIE_PATTERN = r"[X-Z] \d{7}[- ]?[A-KJ-NP-TV-Z]"
 
 
 class SpanishDniNie(BasePiiTask):
@@ -28,8 +28,8 @@ class SpanishDniNie(BasePiiTask):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # Compile the regexes
-        self.dni = re.compile(_DNI_PATTERN, flags=re.X)
-        self.nie = re.compile(_NIE_PATTERN, flags=re.X)
+        self.dni = re.compile(_DNI_PATTERN, flags=re.X | re.IGNORECASE)
+        self.nie = re.compile(_NIE_PATTERN, flags=re.X | re.IGNORECASE)
 
     def find(self, doc: str) -> Iterable[PiiEntity]:
         # DNI

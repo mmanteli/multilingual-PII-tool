@@ -1,20 +1,8 @@
 """
-Detection of phone numbers written with Spanish notation.
+Detection of phone numbers written with local notation (with or without country code), for ES.
+Imported from the central definition in pii_manager.lang.any.spanish_phone_number
 """
 
+from ...es.es.spanish_phone_number import PII_TASKS, PATTERN_ES_PHONE
 
-from pii_manager import PiiEnum
-
-# The pattern for the regex is the same as for English
-from ...es.es.spanish_phone_number import PATTERN_ES_PHONE
-
-
-PII_TASKS = [
-    {
-        "pii": PiiEnum.PHONE_NUMBER,
-        "type": "regex",
-        "task": PATTERN_ES_PHONE,
-        "name": "Spanish phone number",
-        "doc": "detect phone numbers that use Spanish notation.",
-    }
-]
+__all__ = ['PII_TASKS', 'PATTERN_ES_PHONE']

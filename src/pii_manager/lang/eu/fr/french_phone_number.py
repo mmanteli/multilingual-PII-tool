@@ -1,20 +1,8 @@
 """
 Detection of phone numbers written with French notation.
+Imported from the central definition in pii_manager.lang.fr.fr.french_phone_number
 """
 
+from pii_manager.lang.fr.fr.french_phone_number import PII_TASKS, PATTERN_FR_PHONE
 
-from pii_manager import PiiEnum
-
-# The pattern for the regex is the same as for English
-from ...fr.fr.french_phone_number import PATTERN_FR_PHONE
-
-
-PII_TASKS = [
-    {
-        "pii": PiiEnum.PHONE_NUMBER,
-        "type": "regex",
-        "task": PATTERN_FR_PHONE,
-        "name": "French phone number",
-        "doc": "detect phone numbers that use French notation.",
-    }
-]
+__all__ = ['PII_TASKS', 'PATTERN_FR_PHONE']
