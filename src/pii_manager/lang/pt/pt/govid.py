@@ -15,8 +15,8 @@ from pii_manager.helper import BasePiiTask
 
 
 # regex for NIF & CC
-_NIF_PATTERN = r"\b\d{3}\s?\d{3}\s?\d{3}\b"
-_CC_PATTERN = r"\b\d{8}\s\d\s[A-Z]{2}\d\b"
+_NIF_PATTERN = r"\b\d{3}[ ]\d{3}[ ]\d{3}\b"
+_CC_PATTERN = r"\b\d{8}[ ]\d[ ][A-Z]{2}[ ]\d\b"
 
 
 class PortugueseNifCc(BasePiiTask):

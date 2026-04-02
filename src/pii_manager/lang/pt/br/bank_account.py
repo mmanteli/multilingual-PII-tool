@@ -10,7 +10,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for Brazilian bank account numbers
-_BA_PATTERN = r"\b(BR[0-9]{2}[0-9]{23}[A-Z]{1}[A-Z0-9]{1})|(\d{12}-\d)\b"
+_BA_PATTERN = r"\bBR[0-9]{2}[ ]?[0-9]{23}[ ]?[A-Z]{1}[ ]?[A-Z0-9]{1}\b"
 
 
 class BrazilianBankAccount(BasePiiTask):

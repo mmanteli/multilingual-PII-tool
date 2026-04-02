@@ -5,7 +5,7 @@ Detection of phone numbers written with local notation for Belgium.
 
 from pii_manager import PiiEnum
 
-PATTERN_BE_PHONE = r'((\+32[ ]\d{1,3}[ ])|(0\d{1,3}[ ]))\d{2,3}[ ]\d{2}[ ]\d{2}'
+PATTERN_BE_PHONE = r'\b(\+32[ ]?\d{1,3}[ ]?)\d{2,3}[ ]?\d{2}[ ]?\d{2}\b'
 
 
 

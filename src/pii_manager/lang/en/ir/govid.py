@@ -13,7 +13,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for PPS
-_PPS_PATTERN = r"\b\d{7}\s?[A-Z]\b"
+_PPS_PATTERN = r"\b\d{7}[A-Z]\b"
 
 
 class IrishPPS(BasePiiTask):

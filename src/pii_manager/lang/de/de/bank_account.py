@@ -10,7 +10,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for German bank account numbers
-_BA_PATTERN = r"\bDE[0-9]{2}[0-9]{18}\b"
+_BA_PATTERN = r"\bDE[ ]?[0-9]{2}[ ]?[0-9]{18}\b"
 
 
 class GermanBankAccount(BasePiiTask):

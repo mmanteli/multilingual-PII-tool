@@ -13,7 +13,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for CPF
-_CPF_PATTERN = r"\b\d[\.\- ]\d{4}[\.\- ]\d{4}\b"
+_CPF_PATTERN = r"\b\d[\.\-]\d{4}[\.\-]\d{4}\b"
 
 
 class CostaRicanCPF(BasePiiTask):

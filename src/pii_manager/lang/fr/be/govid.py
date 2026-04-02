@@ -12,7 +12,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for NN
-_NN_PATTERN = r"\b\d{2}[\. ](0\d|1[012])[\. ]([0-2]\d|3[01])-?\d{3}[\. ]\d{2}\b"
+_NN_PATTERN = r"\b\d{2}\.(0\d|1[012])\.([0-2]\d|3[01])-\d{3}\.\d{2}\b"
 
 
 class BelgianNN(BasePiiTask):

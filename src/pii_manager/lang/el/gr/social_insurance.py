@@ -10,7 +10,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for Greek Social Insurance
-_SI_PATTERN = r"\b([012]\d|3[01])(0\d|1[0-2])\d{2}\s?\d{4}\s?\d\b"
+_SI_PATTERN = r"\b([012]\d|3[01])(0\d|1[0-2])\d{2}-\d{4}-\d\b"
 
 
 class GreekSocialInsurance(BasePiiTask):

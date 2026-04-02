@@ -11,7 +11,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for license plate
-_LICENSE_PLATE_PATTERN = r"\b[A-Z]{2}[ -]?\d{3}[ -]?[A-Z]{2}\b"
+_LICENSE_PLATE_PATTERN = r"\b[A-Z]{2}-\d{3}-[A-Z]{2}\b"
 
 
 

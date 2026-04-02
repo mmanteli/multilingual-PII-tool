@@ -12,7 +12,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for JMBG
-_JMBG_PATTERN = r"\b(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])\d{3}\d{2}\d{3}\d\b"
+_JMBG_PATTERN = r"\b(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])-\d{3}-\d{2}-\d{3}\d\b"
 
 
 class BosnianJMBG(BasePiiTask):

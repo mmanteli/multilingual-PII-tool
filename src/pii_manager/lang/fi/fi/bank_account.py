@@ -10,7 +10,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for Finish bank account numbers
-_BA_PATTERN = r"\bFI[0-9]{2}[0-9]{14}\b"
+_BA_PATTERN = r"\bFI[0-9]{2}[ ]?[0-9]{14}\b"
 
 
 class FinishBankAccount(BasePiiTask):

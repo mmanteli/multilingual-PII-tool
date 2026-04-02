@@ -13,7 +13,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for IDN
-_IDN_PATTERN = r"\b\d{6,7}\s?[A-Z]\b"
+_IDN_PATTERN = r"\b\d{6,7}[A-Z]\b"
 
 
 class MalteseIDN(BasePiiTask):

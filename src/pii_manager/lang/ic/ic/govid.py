@@ -13,7 +13,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for KNT
-_KNT_PATTERN = r"\b\d{6}-?\d{4}\b"
+_KNT_PATTERN = r"\b\d{6}-\d{4}\b"
 
 
 class IcelandicKNT(BasePiiTask):

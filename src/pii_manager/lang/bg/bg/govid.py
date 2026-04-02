@@ -17,7 +17,7 @@ from pii_manager.helper import BasePiiTask
 # regex for EGN
 _EGN_PATTERN = r"\b\d{2}(?:0[1-9]|1[0-2]|2[1-9]|3[0-2]|4[1-9]|5[0-2])(?:0[1-9]|[12]\d|3[01])\d{4}\b"
 # _PNF_PATTERN = r"\b\d{10}\b" I couldn't find a clear non ambiguous pattern of PNF
-_VAT_PATTERN = r"\bBG *\d{9,10}\b"
+_VAT_PATTERN = r"\bBG[ -]\d{9,10}\b"
 
 
 class BulgarianEgnVat(BasePiiTask):

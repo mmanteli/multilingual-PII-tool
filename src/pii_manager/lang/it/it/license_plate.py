@@ -22,7 +22,7 @@ class ItalianLicensePlate(BasePiiTask):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # Compile the regex
-        self.license_plate_pattern = re.compile(_LICENSE_PLATE_PATTERN, flags=re.X | re.IGNORECASE)
+        self.license_plate_pattern = re.compile(_LICENSE_PLATE_PATTERN, flags=re.X)
 
     def find(self, doc: str) -> Iterable[PiiEntity]:
         # license plate

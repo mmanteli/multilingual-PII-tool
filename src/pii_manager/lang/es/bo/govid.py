@@ -11,7 +11,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for CI
-_CI_PATTERN = r"\b((BE|CB|CH|LP|OR|PD|PT|SC|TJ)[ -]?\d{7}|\d{7}[ -]?(BE|CB|CH|LP|OR|PD|PT|SC|TJ))\b"
+_CI_PATTERN = r"\b((BE|CB|CH|LP|OR|PD|PT|SC|TJ)-\d{7}|\d{7}-(BE|CB|CH|LP|OR|PD|PT|SC|TJ))\b"
 
 
 class BolivianCI(BasePiiTask):
@@ -24,7 +24,7 @@ class BolivianCI(BasePiiTask):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # Compile the regex
-        self.ci_pattern = re.compile(_CI_PATTERN, flags=re.X | re.IGNORECASE)
+        self.ci_pattern = re.compile(_CI_PATTERN, flags=re.X)
 
 
     def find(self, doc: str) -> Iterable[PiiEntity]:

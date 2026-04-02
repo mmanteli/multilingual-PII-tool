@@ -12,7 +12,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for ADT
-_ADT_PATTERN = r"\b([Α-Ω]|[A-Z]){1,2}\s?\d{6}\b"
+_ADT_PATTERN = r"\b([Α-Ω]|[A-Z]){1,2}\d{6}\b"
 
 
 

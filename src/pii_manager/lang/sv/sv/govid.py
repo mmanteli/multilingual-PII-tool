@@ -13,7 +13,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for PERSONNUMMER
-_PERSONNUMMER_PATTERN = r"\b\d{2,4}\d{2}\d{2}[+-]?\d{4}\b"
+_PERSONNUMMER_PATTERN = r"\b\d{2,4}\d{2}\d{2}[+-]\d{4}\b"
 
 
 class SwedishPersonnummer(BasePiiTask):

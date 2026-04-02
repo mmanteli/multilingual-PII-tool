@@ -10,7 +10,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for Portuguese bank account numbers
-_BA_PATTERN = r"\bPT[0-9]{2}[0-9]{21}\b"
+_BA_PATTERN = r"\bPT[0-9]{2}[ ]?[0-9]{21}\b"
 
 
 class PortugueseBankAccount(BasePiiTask):

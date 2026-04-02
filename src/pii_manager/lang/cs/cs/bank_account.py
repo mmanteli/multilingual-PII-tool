@@ -10,7 +10,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for Czech bank account numbers
-_BA_PATTERN = r"\b(CZ[0-9]{2}[0-9]{20})|((19-)?\d{6}\/\d{4})\b"
+_BA_PATTERN = r"\b(CZ[0-9]{2}[0-9]{20})|(19-\d{6}\/\d{4})\b"
 
 
 class CzechBankAccount(BasePiiTask):

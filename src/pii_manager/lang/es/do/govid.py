@@ -34,7 +34,6 @@ class DominicanCEDULA(BasePiiTask):
         # CEDULA
         for item in self.cedula_pattern.finditer(doc):
             item_value = item.group()
-            print(item_value)
             if cedula.is_valid(item_value):
                 yield PiiEntity(
                     PiiEnum.GOV_ID,

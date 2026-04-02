@@ -13,7 +13,7 @@ from pii_manager import PiiEnum, PiiEntity
 from pii_manager.helper import BasePiiTask
 
 # regex for RC
-_RC_PATTERN = r"\b\d{2}(0[1-9]|1[0-2]|5[1-9]|6[0-2])(0[1-9]|[12]\d|3[01])\/?\d{3,4}\b"
+_RC_PATTERN = r"\b\d{2}(0[1-9]|1[0-2]|5[1-9]|6[0-2])(0[1-9]|[12]\d|3[01])\/\d{3,4}\b"
 
 
 class SlovakRC(BasePiiTask):
